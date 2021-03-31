@@ -29,12 +29,14 @@ boolean beat = false;    // set when a heart beat is detected, then cleared when
 AudioPlayer player; //Initialize audio plaeyr
 Minim minim; //Initialize minim
 //This is a test change
+//This is a test change to see the branch at work
 
-//store names of mp3 files here
+//Store names of mp3 files here
 String[] sound_files = {
-  "Zhi - The Song of Pipa.mp3", "Yu-The Mountain.mp3", "melodyyuyao.mp3", "lanhuahua.mp3", "Yu-The Ancient Tune.mp3",
-  "Shang-Snow on River.mp3", "Gong - Flowing Water.mp3"
+  "melodyyuyao.mp3", "Zhi - The Song of Pipa.mp3", "Yu-The Mountain.mp3", "lanhuahua.mp3", "Yu-The Ancient Tune.mp3", "Shang-Snow on River.mp3", 
+  "Gong - Flowing Water.mp3"
 };
+
  
 void setup() {
   myPort = new Serial(this, "COM3", 9600);
@@ -72,8 +74,31 @@ void draw() {
       int random_value = int(random(sound_files.length));
       //math.floor ? math.round, math.ceiling
       String song_name = sound_files[random_value];
+      if (song_name == "melodyyuyao.mp3") {
+          bg_yuyao();
+      }
+      else if (song_name == "Zhi - The Song of Pipa.mp3") {
+          bg_pipa();
+      }
+      else if (song_name == "Yu-The Mountain.mp3"){
+          bg_yu_mountain();
+      }
+      else if (song_name == "lanhuahua.mp3") {
+          bg_huahua();
+      }
+      else if (song_name == "Yu-The Ancient Tune.mp3") {
+          bg_ancient();
+      }
+      else if (song_name == "Shang-Snow on River.mp3") {
+          bg_shang();
+      }
+      else if (song_name == "Gong - Flowing Water.mp3") {
+          bg_gong();
+      }
+     
       player = minim.loadFile(song_name);
       player.play();
+      println(song_name);
     }
 }
 
@@ -83,4 +108,5 @@ void draw() {
     player.close();//kill player
     minim.stop();//kill minim
     super.stop();//kill superClass audio Minim
+    background(0);
   }
