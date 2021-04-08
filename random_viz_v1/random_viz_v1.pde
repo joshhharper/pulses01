@@ -113,6 +113,7 @@ void draw() {
         point(783, 40);
         point(273, 600);
         point(800, 450);
+        
         pushMatrix();
         translate(funSize3, 50);
         strokeWeight(max(15, funWeight));
