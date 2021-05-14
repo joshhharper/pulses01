@@ -11,7 +11,7 @@ void drawMelodyYuYao()
  //float funCol3 = player.mix.level() *255.0 *10; //level is value bw 0-1 so multiply by 255
         float funSize3 = player.mix.level() * 800.0;
         float funWeight = player.mix.level() * 50;
-        
+        yu_image2 = loadImage("yu_nobackground.png");
         background(174, 184, 254);
         if (player.isPlaying()) {
                 imageMode(CENTER);

@@ -11,6 +11,7 @@ void setupJiaoMountain()
 
 void drawJiaoMountain()
 {
+        jiao_image = loadImage("jiao_nobackground.png");
         float funCol2 = player.mix.level() *255.0 *10; //level is value bw 0-1 so multiply by 255
         float funSize2 = player.mix.level() * 1000.0;
         background(80, 137, 145);

@@ -7,6 +7,7 @@ void setupZhiPipa()
 
 void drawZhiPipa()
 {
+         zhi_image = loadImage("zhi_nobackground.png");
          float funCol1 = player.mix.level() *255.0 *10; //level is value bw 0-1 so multiply by 255
          float funSize1 = min(player.mix.level() * 6.283 * 9, 6.283);
          background(193);

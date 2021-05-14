@@ -27,11 +27,13 @@ boolean beat = false;    // set when a heart beat is detected, then cleared when
 AudioPlayer player; //Initialize audio player
 Minim minim; //Initialize minim
 
-Song & Background Selection
-String[] sound_files = {
-  "shangSnow.mp3",
-  "yuAncient.mp3","zhiPipa.mp3", "melodyYuYao.mp3","lanHuaHua.mp3", "real_jiao.mp3", "shangSnow.mp3", "gong.mp3"
-};
+//Song & Background Selection
+//String[] sound_files = {
+//  "shangSnow.mp3",
+//  "yuAncient.mp3","zhiPipa.mp3", "melodyYuYao.mp3","lanHuaHua.mp3", "real_jiao.mp3", "gong.mp3"
+//};
+String[] sound_files = {"yuAncient.mp3"};
+
 int[] song_backgrounds = {
   200, 50, 170, 25, 150, 80, 200
 };
@@ -89,7 +91,7 @@ void draw() {
    boolean isPulse = 40 < dataSerialInt;
    //////////// PICK SONG //////////////////////
    if (!player.isPlaying() && isPulse) {
-      int random_value = int(random(sound_files.length));
+      //int random_value = int(random(sound_files.length));
       song_name = sound_files[random_value];
       player = minim.loadFile(song_name);
       player.play();

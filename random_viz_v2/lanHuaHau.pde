@@ -9,6 +9,7 @@ void setupLanHuaHua()
 
 void drawLanHuaHua()
 {
+         yu_image3 = loadImage("yu_nobackground.png");
          background (100,100,100);
          if (player.isPlaying()){
            imageMode(CENTER);

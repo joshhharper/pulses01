@@ -9,7 +9,7 @@ void setupYuAncient()
 
 void drawYuAncient()
 {
-  
+  yu_image = loadImage("yu_nobackground.png");
   float funCol2 = player.mix.level() *255.0 *10; //level is value bw 0-1 so multiply by 255
   float funSize2 = player.mix.level() * 1000.0;
   background(10,50,funCol2/2,.5);
